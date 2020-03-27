@@ -1,0 +1,22 @@
+section {
+    display: flex;
+}
+.div {
+    height: 100px;
+    width: 100px;
+    margin-right: 30px;
+    border: black solid 1px;
+}
+.div:hover {
+    cursor: pointer;
+}
+
+#right {
+    display: none;
+}
+#wrong {
+    display: none;
+}
+/* .one {
+    background-color: green;
+} */
