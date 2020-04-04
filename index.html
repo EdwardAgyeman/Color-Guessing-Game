@@ -4,22 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Guessing Game</title>
+    <title>What's Color?</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+
     <section>
-        <div class="div" id="one" onclick="game()"></div>
-        <div class="div" id="two" onclick="game()"></div>
-        <div class="div" id="three" onclick="game()"></div>
-        <div class="div" id="four" onclick="game()"></div>
-        <div class="div" id="five" onclick="game()"></div>
+        <div class="div" id="one"></div>
+        <div class="div" id="two"></div>
+        <div class="div" id="three"></div>
+        <div class="div" id="four"></div>
+        <div class="div" id="five"></div>
     </section>
-    <!-- <input type="button" name="reset" id="reset" value="Reset"> -->
+
     <button onclick="location.reload()">Reset</button>
-    <p id="right">Perfect, you guessed it right!</p>
-    <p id="wrong">You can do better, try again!</p>
+    <p id="right">RIGHT</p>
+    <p id="wrong">WRONG</p>
 
     <script src="assets/js/main2.js"></script>
 </body>

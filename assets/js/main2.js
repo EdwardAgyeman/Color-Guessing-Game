@@ -1,34 +1,42 @@
-var rightAnswer = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`
-var wrong1 = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`
-var wrong2 = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`
-var wrong3 = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`
-var wrong4 = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`
+var div1 = document.getElementById("one")
+var div2 = document.getElementById("two")
+var div3 = document.getElementById("three")
+var div4 = document.getElementById("four")
+var div5 = document.getElementById("five")
+var randomDiv = [div1, div2, div3, div4, div5]
 
-console.log(rightAnswer)
-console.log(wrong1)
-console.log(wrong2)
-console.log(wrong3)
-console.log(wrong4)
+// Show every div in the console
+randomDiv.forEach(e => {
+    console.log(e)
+})
 
+// Generate the colorToBeGuessed and show in Console
+var colorToBeGuessed = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`
+console.log(colorToBeGuessed)
+
+// Create the p Element to display the colorToBeGuessed in UI
 var p = document.createElement("p")
-p.textContent = `Guess what color ${rightAnswer} is:`
+p.textContent = `Guess what color ${colorToBeGuessed} is:`
 p.style.fontFamily = "Arial"
 document.body.before(p)
 
+// Assign a randomColor to a randomDiv (FOR LOOP VERSION):
+for (let i=0; i<randomDiv.length; i++) {
+    randomDiv[i].style.backgroundColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`
+    
+    randomDiv[i].addEventListener("click", () => {
+        let clickedColor = randomDiv[i].style.backgroundColor
 
-document.getElementById("one").style.backgroundColor = `${rightAnswer}`
-document.getElementById("two").style.backgroundColor = `${wrong1}`
-document.getElementById("three").style.backgroundColor = `${wrong2}`
-document.getElementById("four").style.backgroundColor = `${wrong3}`
-document.getElementById("five").style.backgroundColor = `${wrong4}`
-
-
-function game() {
-    if(rightAnswer = true) {
+        if(clickedColor == colorToBeGuessed) {
         document.getElementById("right").style.display = "block"
+        return
     } 
-    else if(wrong1 = true) {
+    else {
         document.getElementById("wrong").style.display = "block"
-    }
+        return
+    } 
+    })
 }
 
+// Assign the colorToBeGuessed to a randomDiv:
+randomDiv[Math.floor(Math.random()*5)].style.backgroundColor = colorToBeGuessed
